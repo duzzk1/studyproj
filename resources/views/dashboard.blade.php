@@ -8,8 +8,36 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("You're logged in!") }}
+                <div class="p-6 dark:text-gray-100 bg-indigo-950 text-white">
+                    <div class="flex justify-between w-full h-16 items-center">
+                        <div>
+                            <h2 class="relative bottom-3 font-bold text-2xl text-white">Bem vindo</h2>
+                            <p class="relative text-sm tracking-widest text-white">Bora emitir suas notas carai</p>
+                        </div>
+                        <img src="https://cdn-icons-png.freepik.com/256/869/869636.png?semt=ais_hybrid" alt="store icon" class="w-10 h-10">
+                    </div>
+                </div>
+            </div>
+            <div class="w-full h-[1px] bg-gray-400 my-6"></div>
+
+        </div>
+        <div class="flex max-w-7xl mx-auto sm:px-6 lg:px-8 justify-between text-center gap-6">
+            <div class="flex dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg w-full ">
+                <div class="flex flex-col border rounded-xl p-3 bg-gray-300 items-center w-full h-36 justify-center flex-wrap">
+                    <div>
+                        <h2 class="text-nowrap w-30">Notas do dia:</h2>
+                        <p class="text-green-600 after:content-[]">{{$countInvoicesDay}}</p>
+                        <p class="text-green-600 after:content-[]">R${{$priceDayInvoices}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg w-full gap-6">
+                <div class="flex flex-col border rounded-xl p-3 bg-gray-300 items-center w-full h-36 justify-center flex-wrap">
+                    <div>
+                        <h2 class="text-nowrap w-30">Notas do mes:</h2>
+                        <p class="text-green-600 after:content-[]">{{$countInvoicesMonth}}</p>
+                        <p class="text-green-600 after:content-[]">R${{$priceMonthInvoices}}</p>
+                    </div>
                 </div>
             </div>
         </div>

@@ -18,6 +18,9 @@
                     <x-nav-link :href="route('admin.stores.index')" :active="request()->routeIs('admin.stores.*')">
                         {{ __('Lojas') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('admin.invoices.index')" :active="request()->routeIs('admin.invoices.*')">
+                        {{ __('Notas fiscais') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -75,6 +78,9 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('admin.stores.index')" :active="request()->routeIs('admin.stores.*')">
                 {{ __('Lojas') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('admin.invoices.index')" :active="request()->routeIs('admin.invoices.*')">
+                {{ __('Notas fiscais') }}
             </x-responsive-nav-link>
         </div>
 
