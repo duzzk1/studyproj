@@ -53,9 +53,6 @@
                             @endforelse
                         </tbody>
                     </table>
-                    <div class="mt-2">
-                        {{ $stores->links() }}
-                    </div>
                 </div>
                 <div class="flex flex-around items-center justify-center">
                     <a href="{{ route('admin.stores.create', ['store' => $store->id]) }}" class="px-4 py-2 border border-green-300 bg-green-300 mb-2 rounded-md">

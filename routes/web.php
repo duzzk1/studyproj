@@ -25,4 +25,6 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
 });
 
 Route::get('/admin/invoices', [InvoiceController::class, 'index'])->name('admin.invoices.index');
-Route::get('/admin/invoices/{invoice}/cancel', [InvoiceController::class, 'cancel'])->name('admin.invoices.cancel');
+Route::delete('/admin/invoices/{invoice}/cancel', [InvoiceController::class, 'cancel'])->name('admin.invoices.cancel');
+Route::get('/admin/invoices/create', [InvoiceController::class, 'create'])->name('admin.invoices.create');
+Route::post('/admin/invoices/newInvoice', [InvoiceController::class, 'newInvoice'])->name('admin.invoices.newInvoice');

@@ -6,6 +6,8 @@ use App\Models\Invoice;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use function Laravel\Prompts\alert;
+
 class InvoiceController extends Controller
 {
 
@@ -27,24 +29,26 @@ class InvoiceController extends Controller
      */
     public function create(Request $request)
     {
-
+        return view('admin.invoices.create');
     }
     /**
      * Store a newly created resource in storage.
      */
 
-    public function store(Request $request) {
+    public function newInvoice(Request $request) {
         $this->invoice->create($request->all());
 
         return redirect()->route('admin.invoices.index');
 
-
     }
-    public function cancel(){
+    public function cancel(string $invoice){
+        $invoice = Invoice::find($invoice);
+        $invoice->delete();
 
+        return redirect()->route('admin.invoices.index');
     }
     public function getInvoices() {
-        $data = ['countInvoicesDay' => $this->getCountDay(), 'countInvoicesMonth' =>  $this->getCountMonth(), 'priceDayInvoices' => number_format($this->getPriceDay(), 2, ',', ''),'priceMonthInvoices' => number_format($this->getPriceMount(), 2, ',', '') ];
+        $data = ['countInvoicesDay' => $this->getCountDay(), 'countInvoicesMonth' =>  $this->getCountMonth(), 'priceDayInvoices' => number_format($this->getPriceDay(), 2, ',', '.'),'priceMonthInvoices' => number_format($this->getPriceMount(), 2, ',', '.') ];
         return view('dashboard')->with($data);
     }
 
